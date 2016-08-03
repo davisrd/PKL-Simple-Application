@@ -13,6 +13,8 @@ public class DistrictRepoImpl extends AbstractDao<Integer, District> implements 
 	
 	public List<District> getAllDistrict(){
 		Criteria criteria = createEntityCriteria();
+		int id = criteria.list().size();
+		System.out.println(id);
 		return (List<District>) criteria.list();
 	}
 	
