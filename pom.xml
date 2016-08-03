@@ -188,13 +188,13 @@
 					<configuration>
             			<outputDirectory>/xampp/tomcat/webapps/</outputDirectory>
 						<warSourceDirectory>src/main/webapp</warSourceDirectory>
-						<warName>ProyekRuangan</warName>
+						<warName>PKLSimpleApplication</warName>
 						<failOnMissingWebXml>false</failOnMissingWebXml>
 					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
-		<finalName>ProyekRuangan</finalName>
+		<finalName>PKLSimpleApplication</finalName>
 	</build>
 </project>
 
