@@ -1,0 +1,40 @@
+<h1>Form Memorandum</h1>
+<form class="form-horizontal" role="form" ng-submit="openModal('sm',pengajuan)">
+<label>Penerima Memorandum:
+    <input type="checkbox" ng-model="checkboxModel.direktur"> Direktur
+</label>
+<br/>
+<label>
+<input type="checkbox" ng-model="checkboxModel.pd1"> PD1
+</label>
+<label>
+<input type="checkbox" ng-model="checkboxModel.pd2"> PD2
+</label>
+<label>
+<input type="checkbox" ng-model="checkboxModel.pd3"> PD3
+</label>
+<label>
+<input type="checkbox" ng-model="checkboxModel.pd4"> PD4
+</label>
+</label>
+
+<div class="form-group">
+  <label class=" col-md-2" style="text-align:left" for="memorandumSubject">Judul</label>
+  <div class="col-md-4">
+	<input type="text" class="form-control" ng-model="memorandum.memorandumSubject" ng-required="true">               
+  </div>
+</div> 
+<div class="form-group">
+  <label class=" col-md-2" style="text-align:left" for="memorandumContent">Isi Memorandum</label>
+  <div class="col-md-4">
+	<input type="text" class="form-control" ng-model="memorandum.memorandumMessage" ng-required="true">               
+  </div>
+</div> 
+
+	<div class="form-group">
+	  <div class="col-md-offset-4 col-md-3">
+		<a href="#/reservationRoomSelection"><button type="reset" class="btn btn-default alert alert-danger">Batal</button></a>
+		<button type="submit" class="btn btn-default alert alert-success">Submit</button>
+	  </div>
+	</div>
+</form>

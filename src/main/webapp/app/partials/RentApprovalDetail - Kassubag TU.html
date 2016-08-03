@@ -1,0 +1,94 @@
+<h1>Rincian Penyewaan</h1>
+
+<form class="form-horizontal" role="form" ng-submit="openModal('sm',pengajuan)">
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="namaPenyewa">Nama Penyewa</label>
+      <div class="col-md-4">
+        {{selectedRent.eventUserName}}               
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="tanggalMulai">Tanggal Mulai</label>
+      <div class="col-md-4">
+        {{selectedRent.rentStartDate}}             
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="tanggalSelesai">Tanggal Selesai</label>
+      <div class="col-md-4">
+        {{selectedRent.rentEndDate}}               
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="namaKegiatan">Nama Kegiatan</label>
+      <div class="col-md-4">
+        {{selectedRent.eventName}}                        
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="jenisKegiatan">Jenis Kegiatan</label>
+      <div class="col-md-4">
+        {{selectedRent.eventType}}              
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="namaRuangan">Nama Ruangan</label>
+      <div class="col-md-4">
+        {{selectedRent.room.roomName}}               
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="statusPeminjaman">Status Peminjaman</label>
+      <div class="col-md-4">
+        {{selectedRent.rentStatus}}              
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="lampiranSuratPengajuanPenyewaan">Lampiran Surat Pengajuan Penyewaan</label>
+      <div class="col-md-4">
+        <p class="input-group">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click = "open2()" ><i class="glyphicon glyphicon-floppy-disk" ></i></button>
+          </span>
+        </p>
+        <label><a href="#" target="_blank">Lampiran.docx</a></label>             
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="hargaSewaGedung">Harga Sewa Gedung</label>
+      <div class="col-md-4">
+        {{selectedRent.rentPrice}}              
+      </div>
+    </div>
+
+    <div class="form-group">
+    <label class=" col-md-2" style="text-align:left" for="biayaOperasional">Biaya Operasional</label>
+    <div class="col-md-4">
+    <input type="text" class="form-control" ng-model="rent.rentOperationalPrice" ng-required="true">               
+    </div>
+    </div> 
+
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="totalHarga">Total Harga</label>
+      <div class="col-md-4">
+        {{selectedRent.rentTotalPrice}}              
+      </div>
+    </div>
+
+    <br>
+    <div class="form-group">
+	  <div class="col-md-offset-1 col-md-7">
+		  <div class="row">
+			<button class="btn btn-primary" ng-click="">Submit Harga Sewa</button>
+		  </div>
+	  </div>
+    </div>
+</form>

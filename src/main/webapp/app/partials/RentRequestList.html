@@ -1,0 +1,49 @@
+<div class="panel panel-default" id="pan">
+  <div class="panel-heading" id="pan-head">
+    <p class="panel-title" id="pan-title">Daftar Pengajuan Penyewaan</p>
+  </div>
+  <div class="panel-body" id="pan-body">
+  	<div class="col-md-4">
+		<button class="btn btn-primary" ng-click="open()">Ajukan Penyewaan</button>
+		<button class="btn btn-primary" ng-click="viewRentDetail()">Lihat Detail</button>
+	</div>
+			
+	<table datatable="ng" class="table">
+		<thead>
+			<tr>
+				<th>Kode Penyewaan</th>
+				<th>Nama Penyewa</th>
+				<th>Tanggal Mulai</th>
+				<th>Tanggal Selesai</th>
+				<th>Tempat</th>
+				<th>Judul Kegiatan</th>
+				<th>Total Biaya</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="rent in listOfRent" ng-click="selectRent(rent)" ng-class="{selected: rent.rentCode == selectedRent.rentCode}">
+				<td><span ng-bind="rent.rentCode"></span></td>
+				<td><span ng-bind="rent.renter"></span></td>
+				<td><span>{{(rent.rentDateStart | date:'dd MMMM yyyy')}}</span></td>
+				<td><span>{{(rent.rentDateEnd | date:'dd MMMM yyyy')}}</span></td>
+				<td><span ng-bind="rent.room.roomName"></span></td>
+				<td><span ng-bind="rent.eventName"></span></td>
+				<td><span>{{rent.rentPrice + rent.rentOperationalPrice | currency : "Rp "}}</span></td>
+				<td ng-if="rent.rentStatus!='C'">
+					<span ng-if="rent.rentPhase == '1'">Dalam proses Direktur</span>
+					<span ng-if="rent.rentPhase == '2'">Dalam proses Kasubbag TU</span>
+					<span ng-if="rent.rentPhase == '3'">Dalam proses KPKNL</span>
+					<span ng-if="rent.rentPhase == '4'">Konfirmasi Pembayaran</span>
+					<span ng-if="rent.rentPhase == '5'">Pembayaran sudah dilakukan</span>
+					<span ng-if="rent.rentPhase == '6'">Penyewaan Diizinkan</span>
+					<span ng-if="rent.rentPhase == '7'">Penyewaan Tidak Diizinkan</span>
+				</td>
+				<td ng-if="rent.rentStatus=='C'">
+					<span>Dibatalkan</span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<div>
+	<div>
+		<b>Menambahkan Ruangan</b>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-4">
+			Nama Ruangan
+		</div>
+		<div class="col-md-8">
+			{{reservation.facility.facilityName}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			Tipe Ruangan
+		</div>
+		<div class="col-md-8">
+			<select name="selectionField"> 
+				<option value="Umum" >Umum </option>
+				<option value="Khusus" >Khusus </option>
+			</select>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			Pengelola Ruangan
+		</div>
+		<div class="col-md-8">
+			<select name="selectionField"> 
+				<option value="Umum" >Kasubbag TU </option>
+				<option value="Khusus" >Pengelola Fasilitas Khusus </option>
+			</select>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			Jenis Ruangan
+		</div>
+		<div class="col-md-8">
+		<input type="checkbox" id="cek1" value="Peminjaman" onclick="cek1Checked()"/>Peminjaman
+		<input type="checkbox" id="cek2" value="Penyewaan" onclick="cek2Checked()"/>Penyewaan
+			
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			Harga Ruangan
+		</div>
+		<div class="col-md-8">
+			<input type="number" min = 1000000></input>
+		</div>
+	</div>
+	
+	<div class="col-offset-3">
+		<button>Batal</button>
+		<button>Tambah</button>
+	</div>
+	<script type="text/javascript">
+	function cek1Checked(){
+		document.getElementById("cek1").checked = true;
+		document.getElementById("cek2").checked = false;
+	}
+	function cek2Checked(){
+		document.getElementById("cek2").checked = true;
+		document.getElementById("cek1").checked = false;
+	}
+	</script>
+</div>

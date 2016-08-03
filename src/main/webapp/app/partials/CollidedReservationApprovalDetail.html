@@ -1,0 +1,98 @@
+<h1>Rincian Peminjaman</h1>
+
+<form class="form-horizontal" role="form" ng-submit="openModal('sm',pengajuan)">
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="namaPeminjam">Nama Peminjam</label>
+      <div class="col-md-4">
+        {{selectedReservation.eventUserName}}               
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="tanggalMulai">Tanggal Mulai</label>
+      <div class="col-md-4">
+        {{selectedReservation.reservationStartDate}}             
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="tanggalSelesai">Tanggal Selesai</label>
+      <div class="col-md-4">
+        {{selectedReservation.reservationEndDate}}               
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="namaKegiatan">Nama Kegiatan</label>
+      <div class="col-md-4">
+        {{selectedReservation.eventName}}                        
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="jenisKegiatan">Jenis Kegiatan</label>
+      <div class="col-md-4">
+        {{selectedReservation.eventType}}              
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="skalaKegiatan">Skala Kegiatan</label>
+      <div class="col-md-4">
+        {{selectedReservation.eventScale}}               
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="jumlahPeserta">Jumlah Peserta</label>
+      <div class="col-md-4">
+        {{selectedReservation.totalAudience}}               
+      </div>
+    </div> 
+
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="namaRuangan">Nama Ruangan</label>
+      <div class="col-md-4">
+        {{selectedReservation.room.roomName}}               
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="jenisRuangan">Jenis Ruangan</label>
+      <div class="col-md-4">
+        {{selectedReservation.room.roomType}}              
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="lampiranSuratIzinKegiatan">Lampiran Surat Izin Kegiatan</label>
+      <div class="col-md-4">
+        <p class="input-group">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click = "open2()" ><i class="glyphicon glyphicon-floppy-disk" ></i></button>
+          </span>
+        </p>
+        <label><a href="#" target="_blank">Lampiran.docx</a></label>             
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class=" col-md-2" style="text-align:left" for="statusPeminjaman">Status</label>
+      <div class="col-md-4">
+        {{selectedReservation.reservationStatus}}              
+      </div>
+    </div>
+
+    <br>
+    <div class="form-group">
+	  <div class="col-md-offset-1 col-md-7">
+		  <div class="row">
+			<button class="btn btn-default alert alert-success" ng-click="goTo('/memorandumForm')">Ajukan Memorandum</button>
+			<button type="reset" class="btn btn-default alert alert-danger" ng-click="openRecommendedEvent()">Rekomendasi Kegiatan yang diizinkan</button>
+		  <div class="row">
+			<button class="btn btn-default alert alert-success" ng-click="openApproveEvent()">Izinkan Peminjaman</button>
+			<button type="reset" class="btn btn-default alert alert-danger" ng-click="goTo('/reservationRejectionDetail')">Tolak Peminjaman</button>
+		  </div>
+	  </div>
+    </div>
+</form>

@@ -1,0 +1,36 @@
+<div class="panel panel-default" id="pan">
+  <div class="panel-heading" id="pan-head">
+    <p class="panel-title" id="pan-title">Daftar Pengajuan Peminjaman yang Belum Diproses </p>
+  </div>
+  <div class="panel-body" id="pan-body">
+  	<table datatable="ng" class="table">
+		<thead>
+			<tr>
+				<th>No. </th>
+				<th>Nama Peminjam</th>
+				<th>Tanggal Mulai</th>
+				<th>Tanggal Selesai</th>
+				<th>Tempat</th>
+				<th>Judul Kegiatan</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="reservation in listOfReservation" ng-click="selectReservation(reservation)"  ng-class="{selected: reservation.reservationCode == selectedReservation.reservationCode}">
+				<td><span ng-bind="reservation.reservationCode"></span></td>
+				<td><span ng-bind="reservation.borrower"></span></td>
+				<td><span>{{(reservation.reservationDateStart | date:'dd MMMM yyyy HH:mm')}}</span></td>
+				<td><span>{{(reservation.reservationDateEnd | date:'dd MMMM yyyy HH:mm')}}</span></td>
+				<td><span ng-bind="reservation.room.roomName"></span></td>
+				<td><span ng-bind="reservation.eventName"></span></td>
+				<td>
+					<span ng-show="reservation.reservationStatus == 'N'">Pengajuan Baru</span>
+					<span ng-show="reservation.reservationStatus == 'M'">Pengajuan Pemindahan</span>
+					<span ng-show="reservation.reservationStatus == 'C'">Dibatalkan</span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<button class="btn btn-primary" ng-click="viewReservationApprovalDetail()">Lihat Detail</button></a>
+  </div>
+ </div>

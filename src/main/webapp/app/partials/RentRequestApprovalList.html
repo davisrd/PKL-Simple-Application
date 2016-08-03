@@ -1,0 +1,41 @@
+<div class="panel panel-default" id="pan">
+  <div class="panel-heading" id="pan-head">
+    <p class="panel-title" id="pan-title">Daftar Pengajuan Penyewaan yang Belum Diproses</p>
+  </div>
+  <div class="panel-body" id="pan-body">
+  	<table datatable="ng" class="table">
+		<thead>
+			<tr>
+				<th>Kode Penyewaan</th>
+				<th>Nama Penyewa</th>
+				<th>Tanggal Mulai</th>
+				<th>Tanggal Selesai</th>
+				<th>Tempat</th>
+				<th>Judul Kegiatan</th>
+				<th>Kategori Kegiatan</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="rent in listOfRent" ng-click="selectRent(rent)" ng-class="{selected: rent.rentCode == selectedRent.rentCode}">
+				<td><span ng-bind="rent.rentCode"></span></td>
+				<td><span ng-bind="rent.renter"></span></td>
+				<td><span>{{(rent.rentDateStart | date:'dd MMMM yyyy')}}</span></td>
+				<td><span>{{(rent.rentDateEnd | date:'dd MMMM yyyy')}}</span></td>
+				<td><span ng-bind="rent.room.roomName"></span></td>
+				<td><span ng-bind="rent.eventName"></span></td>
+				<td>
+					<span ng-if="rent.eventCategory == 'B'">Bisnis</span>
+					<span ng-if="rent.eventCategory == 'N'">Non Bisnis</span>
+					<span ng-if="rent.eventCategory == 'S'">Sosial</span>
+				</td>
+				<td>
+					<span ng-if="rent.rentStatus == 'N'">Pengajuan Baru</span>
+					<span ng-if="rent.rentStatus == 'M'">Pengajuan Pemindahan</span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<button class="btn btn-primary" ng-click="viewRentApprovalDetail()">Lihat Detail</button></a>
+	  </div>
+</div>
