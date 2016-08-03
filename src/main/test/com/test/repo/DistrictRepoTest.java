@@ -13,7 +13,7 @@ import com.model.District;
 import com.repo.DistrictRepo;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes=TestConfiguration.class,)
+@ContextConfiguration(classes=TestConfiguration.class, loader=AnnotationConfigContextLoader.class)
 public class DistrictRepoTest {
 
 	@Autowired
@@ -23,6 +23,12 @@ public class DistrictRepoTest {
 	public void getAllDistrictTest(){
 		List<District> listDistrict = districtRepo.getAllDistrict();
 		
-		assertTrue(listDistrict.size()>0);
+		assertEquals(3, listDistrict.size());
+	}
+	
+	@Test
+	public void getDistrictTest(){
+		District district = districtRepo.getDistrict("BD001");
+		assertNotNull(district);
 	}
 }

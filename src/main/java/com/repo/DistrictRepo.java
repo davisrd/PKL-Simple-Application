@@ -8,5 +8,5 @@ public interface DistrictRepo {
 	
 	public List<District> getAllDistrict();
 	
-	public List<District> getDistrict(String districtCode);
+	public District getDistrict(String districtCode);
 }

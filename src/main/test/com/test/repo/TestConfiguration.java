@@ -16,7 +16,7 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 
 @Configuration
-@ComponentScan(basePackages = "com.leftproject.dao")
+@ComponentScan(basePackages = "com.repo")
 @PropertySource(value = { "classpath:application.properties" })
 public class TestConfiguration {
 	@Autowired

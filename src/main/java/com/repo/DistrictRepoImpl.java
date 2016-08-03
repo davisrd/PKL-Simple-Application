@@ -16,9 +16,9 @@ public class DistrictRepoImpl extends AbstractDao<Integer, District> implements 
 		return (List<District>) criteria.list();
 	}
 	
-	public List<District> getDistrict(String districtCode){
+	public District getDistrict(String districtCode){
 		Criteria criteria = createEntityCriteria();
 		criteria.add(Restrictions.eq("District_Code", districtCode));
-		return (List<District>) criteria.list();
+		return (District) criteria.uniqueResult();
 	}
 }
