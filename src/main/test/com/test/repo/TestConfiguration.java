@@ -16,7 +16,7 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 
 @Configuration
-@ComponentScan(basePackages = "com.repo")
+@ComponentScan(basePackages = "com.leftproject.dao")
 @PropertySource(value = { "classpath:application.properties" })
 public class TestConfiguration {
 	@Autowired
@@ -26,7 +26,7 @@ public class TestConfiguration {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan(new String[] { "com.model" });
+        sessionFactory.setPackagesToScan(new String[] { "com.leftproject.model" });
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
      }

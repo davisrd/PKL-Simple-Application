@@ -13,7 +13,7 @@ import com.model.District;
 import com.repo.DistrictRepo;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes=TestConfiguration.class, loader=AnnotationConfigContextLoader.class)
+@ContextConfiguration(classes=TestConfiguration.class,)
 public class DistrictRepoTest {
 
 	@Autowired
