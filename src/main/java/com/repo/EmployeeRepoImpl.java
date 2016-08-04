@@ -19,7 +19,11 @@ public class EmployeeRepoImpl extends AbstractDao<Integer,Employee> implements E
 	
 	public boolean saveEmployee(Employee employee){
 		try{
-			persist(employee);
+//			persist(employee); // masih error
+			//-----------------------Sementara menggunakan ini------------------//
+			Query query = getSession().createSQLQuery("insert into Employee Values('" +employee.getEmployeeCode()+"',current_date,'"+employee.getEmployeeAddress()+"','"+employee.getEmployeeName()+"','"+employee.getGender()+"',current_date,'"+employee.getDistrict().getDistrictCode()+"')");
+			query.executeUpdate();
+			//------------------------------------------------------------------//
 			return true;
 		}
 		catch(Exception e){
@@ -31,7 +35,7 @@ public class EmployeeRepoImpl extends AbstractDao<Integer,Employee> implements E
 	
 	public boolean deleteEmployee(String employeeCode){
 		try{
-			Query query = getSession().createSQLQuery("delete from Employee where Employee_Code = " +employeeCode);
+			Query query = getSession().createSQLQuery("delete from Employee where Employee_Code = '" +employeeCode+"'");
 			query.executeUpdate();
 			return true;
 		}

@@ -8,7 +8,7 @@ import com.repo.EmployeeRepo;
 //JUnit Suite Test
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ 
-//   EmployeeRepoTest.class,
+   EmployeeRepoTest.class,
    DistrictRepoTest.class
 })
 public class JUnitTestSuite {
