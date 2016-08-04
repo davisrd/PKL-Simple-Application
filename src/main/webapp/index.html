@@ -1,44 +1,38 @@
 <!DOCTYPE html>
 
 <!-- define angular app -->
-<html >
+<html ng-app="simpleApp">
 
 <head>
   <!-- SCROLLS -->
+  <link rel="stylesheet" href="styles/examples-offline.css">
   <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="styles/simpleApplication.css">
   <link rel="stylesheet" href="styles/kendo.material.min.css">
-  
+  <link rel="stylesheet" href="styles/kendo.common-material.min.css">
+  <link rel="stylesheet" href="styles/kendo.common.min.css">
+  <link rel="stylesheet" href="styles/kendo.rtl.min.css">
+  <link rel="stylesheet" href="styles/kendo.default.min.css">
+  <link rel="stylesheet" href="styles/kendo.default.mobile.min.css">
+  <link rel="stylesheet" href="styles/kendo.dataviz.min.css">
+  <link rel="stylesheet" href="styles/kendo.dataviz.default.min.css">
+
   <!-- SPELLS -->
+  <script src="lib/jquery.min.js"></script>
   <script src="lib/angular.min.js"></script>
   <script src="lib/angular-route.min.js"></script>
+  
+
   <script src="js/app.js"></script>
-  <script src="js/controllers/datePicker.js"></script>
-  
+  <script src="js/controllers/controllers.js"></script>
 
-  <!-- Kendo -->
-  <!-- Common Kendo UI CSS for web widgets and widgets for data visualization. -->
-  <link href="styles/kendo.common.min.css" rel="stylesheet" />
-
-  <!-- (Optional) RTL CSS for Kendo UI widgets for the web. Include only in right-to-left applications. -->
-  <link href="styles/kendo.rtl.min.css" rel="stylesheet" type="text/css" />
   
-  <!-- Default Kendo UI theme CSS for web widgets and widgets for data visualization. -->
-  <link href="styles/kendo.default.min.css" rel="stylesheet" />
   
-  <!-- (Optional) Kendo UI Hybrid CSS. Include only if you will use the mobile devices features. -->
-  <link href="styles/kendo.default.mobile.min.css" rel="stylesheet" type="text/css" />
-  
-  <!-- jQuery JavaScript -->
-  <script src="lib/jquery.min.js"></script>
-
-  <!-- Kendo UI combined JavaScript -->
   <script src="lib/kendo.all.min.js"></script>
-
 </head>
 
 <!-- define angular controller -->
-<body ng-app="simpleApp">
+<body>
 
   <div id="main">
   
@@ -47,10 +41,8 @@
     <div ng-view>
 
     </div>
-    <input kendo-date-picker ng-model="dateString" k-ng-model="dateObject" style="width: 100%;" />
-    
   </div>
- 
+  
 </body>
 
 </html>

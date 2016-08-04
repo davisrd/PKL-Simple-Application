@@ -1,45 +1,50 @@
 <div class="fieldlist">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-5">
             <ul>
                 <li><label for="simple-input">Nama Karyawan</label>
                     <input id="simple-input" type="text" class="k-textbox" style="width: 100%;" />
                 </li>
             </ul>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <ul>
-                <li><label for="simple-input">Jenis Kelamin</label>
-                    <input id="simple-input" type="text" class="k-textbox" style="width: 100%;" />
-                </li>
+                <div class="k-content">
+                    <li><label for="simple-input">Jenis Kelamin</label>
+                        <input kendo-combo-box ng-model="jenisKelamin" k-options='jenisKelaminOptions' style="width: 100%;" />
+                    </li>
+                </div>
             </ul>
         </div>
         <div class="col-md-3">
             <ul>
                 <li><label for="simple-input">Tanggal Lahir</label>
-                    <div class="demo-section k-content" ng-controller="MyCtrl">
-                        <div>
-                            <h4>Select date:</h4>
-                            <input kendo-date-picker ng-model="dateString" k-ng-model="dateObject" style="width: 100%;" />
-                        </div>
+                    <input kendo-date-picker ng-model="bornDate" k-ng-model="bornDate" style="width: 100%;" />
                 </li>
             </ul>
-            </div>
-        </div>
-        <ul>
-            <li>
-                <label for="simple-input">Nama Karyawan</label>
-                <input id="simple-input" type="text" class="k-textbox" style="width: 100%;" />
-            </li>
-            <li>
-                <label for="simple-textarea">Textarea</label>
-                <textarea id="simple-textarea" class="k-textbox" style="width: 100%;"></textarea>
-            </li>
-        </ul>
-
-
-        <div class="row">
-
         </div>
     </div>
-    
+
+
+
+    <div class="row">
+        <div class="col-md-5">
+            <label for="simple-input">Tanggal Masuk</label>
+            <input kendo-date-picker ng-model="joinDate" k-ng-model="joinDate" style="width: 100%;" />
+        </div>
+
+        <div class="col-md-7">
+            <label for="simple-textarea">Alamat</label>
+            <textarea id="simple-textarea" class="k-textbox" style="width: 100%;"></textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">
+            <label for="simple-input">Kelurahan</label>
+            <input kendo-combo-box ng-model="kelurahan" k-options='kelurahanOptions' style="width: 100%;" />
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
