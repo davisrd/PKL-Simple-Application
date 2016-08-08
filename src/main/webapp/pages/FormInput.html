@@ -1,27 +1,23 @@
 <div class="fieldlist">
     <div class="row">
         <div class="col-md-5">
-            <ul>
-                <li><label for="simple-input">Nama Karyawan</label>
-                    <input id="simple-input" type="text" class="k-textbox" style="width: 100%;" />
-                </li>
-            </ul>
+            <label for="simple-input">Nama Karyawan</label>
+            <input id="simple-input" type="text" class="k-textbox" style="width: 100%;" />
+
         </div>
         <div class="col-md-3">
-            <ul>
-                <div class="k-content">
-                    <li><label for="simple-input">Jenis Kelamin</label>
-                        <input kendo-combo-box ng-model="jenisKelamin" k-options='jenisKelaminOptions' style="width: 100%;" />
-                    </li>
-                </div>
-            </ul>
+
+            <div class="k-content">
+
+                <label for="simple-input">Jenis Kelamin</label>
+                <input kendo-combo-box ng-model="gender" k-options='genderOptions' style="width: 100%;" />
+
+            </div>
+
         </div>
         <div class="col-md-3">
-            <ul>
-                <li><label for="simple-input">Tanggal Lahir</label>
-                    <input kendo-date-picker ng-model="bornDate" k-ng-model="bornDate" style="width: 100%;" />
-                </li>
-            </ul>
+            <label for="simple-input">Tanggal Lahir</label>
+            <input kendo-date-picker ng-model="bornDate" k-ng-model="bornDate" style="width: 100%;" />
         </div>
     </div>
 
@@ -33,7 +29,7 @@
             <input kendo-date-picker ng-model="joinDate" k-ng-model="joinDate" style="width: 100%;" />
         </div>
 
-        <div class="col-md-7">
+        <div class="col-md-6">
             <label for="simple-textarea">Alamat</label>
             <textarea id="simple-textarea" class="k-textbox" style="width: 100%;"></textarea>
         </div>
@@ -47,4 +43,17 @@
     </div>
     <br>
     <br>
+
+    <div class="row">
+        <div class="col-md-offset-8 col-md-3">
+            <input kendo-auto-complete ng-model="country" k-data-source="countryNames" style="width: 100%;" />
+            <p class="demo-hint">
+        </div>       
+    </div>
+    <div kendo-grid
+         k-data-source="gridData"
+         k-columns="gridColumns"
+         k-selectable="true"
+         k-on-change="onChange(data)">
+         </div>
 </div>
